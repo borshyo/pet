@@ -1,1 +1,1 @@
-export { ToggleSwitcher } from "./ui/ToggleSwitcher";
+export { ToggleSwitcher } from './ui/ToggleSwitcher'

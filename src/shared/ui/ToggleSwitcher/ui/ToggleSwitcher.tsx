@@ -1,16 +1,17 @@
-import { Theme, useTheme } from "app/providers/ThemeProvider";
-import ThemeDark from "shared/assets/icons/theme-dark.svg";
-import ThemeLight from "shared/assets/icons/theme-light.svg";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ThemeButton } from "shared/ui/Button";
-import cls from "./ToggleSwitcher.module.scss";
+import { Theme, useTheme } from 'app/providers/ThemeProvider'
+import type { FC } from 'react'
+import ThemeDark from 'shared/assets/icons/theme-dark.svg'
+import ThemeLight from 'shared/assets/icons/theme-light.svg'
+import { classNames } from 'shared/lib/classNames/classNames'
+import { Button, ThemeButton } from 'shared/ui/Button'
+import cls from './ToggleSwitcher.module.scss'
 
 interface ToggleSwitcherProps {
-  className?: string;
+  className?: string
 }
 
-export const ToggleSwitcher = ({ className }: ToggleSwitcherProps) => {
-  const { theme, toggleTheme } = useTheme();
+export const ToggleSwitcher: FC<ToggleSwitcherProps> = ({ className }) => {
+  const { theme, toggleTheme } = useTheme()
 
   return (
     <Button
@@ -20,5 +21,5 @@ export const ToggleSwitcher = ({ className }: ToggleSwitcherProps) => {
     >
       {theme === Theme.LIGHT ? <ThemeLight /> : <ThemeDark />}
     </Button>
-  );
-};
+  )
+}
