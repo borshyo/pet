@@ -1,5 +1,6 @@
 import { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
+import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import cls from './Navbar.module.scss'
@@ -15,12 +16,12 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
       <div className={cls.links}>
         <AppLink
           theme={AppLinkTheme.SECONDARY}
-          to={'/'}
+          to={RoutePath[AppRoutes.MAIN]}
           className={cls.mainLink}
         >
           {t('main')}
         </AppLink>
-        <AppLink theme={AppLinkTheme.RED} to={'/about'}>
+        <AppLink theme={AppLinkTheme.RED} to={RoutePath[AppRoutes.ABOUT]}>
           {t('about')}
         </AppLink>
       </div>
