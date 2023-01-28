@@ -17,7 +17,8 @@ export function buildPlugins({
       chunkFilename: "css/[name].[contenthash:8].css",
     }),
     new webpack.DefinePlugin({
-      __IS_DEV: isDev,
+      __IS_DEV: JSON.stringify(isDev),
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ];
 }
