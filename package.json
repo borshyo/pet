@@ -10,7 +10,7 @@
     "lint:ts": "eslint -c ./config/eslint/.eslintrc.js **/*.{ts,tsx}",
     "lint:ts:fix": "eslint -c ./config/eslint/.eslintrc.js **/*.{ts,tsx} --fix",
     "lint:scss": "npx stylelint --config ./config/eslint/.stylelintrc.json **/*.scss",
-    "lint:scss:fix": "npx stylelint --config ./config/eslint/.stylelintrc.json **/*.{scss} --fix",
+    "lint:scss:fix": "npx stylelint --config ./config/eslint/.stylelintrc.json **/*.scss --fix",
     "unit": "jest"
   },
   "keywords": [],
