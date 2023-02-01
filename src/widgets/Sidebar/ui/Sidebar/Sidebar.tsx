@@ -1,35 +1,36 @@
-import { type FC, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Button } from 'shared/ui/Button'
-import { LangSwitcher } from 'shared/ui/LangSwitcher'
-import { ToggleSwitcher } from 'shared/ui/ToggleSwitcher'
-import cls from './Sidebar.module.scss'
+import { classNames } from 'shared/lib/classNames/classNames';
+import { useState } from 'react';
+import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
+import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
+import { Button } from 'shared/ui/Button/Button';
+import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
-  className?: string
+    className?: string;
 }
 
-export const Sidebar: FC<SidebarProps> = ({ className }) => {
-  const [collapsed, setCollapsed] = useState(false)
+export const Sidebar = ({ className }: SidebarProps) => {
+    const [collapsed, setCollapsed] = useState(false);
 
-  const { t } = useTranslation()
+    const onToggle = () => {
+        setCollapsed((prev) => !prev);
+    };
 
-  const toggleCollapsed = (): void => {
-    setCollapsed((prev) => !prev)
-  }
-
-  return (
-    <div
-      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
-        className
-      ])}
-    >
-      <div className={cls.switchers}>
-        <ToggleSwitcher />
-        <LangSwitcher className={cls.lang} />
-      </div>
-      <Button onClick={toggleCollapsed}>{t('toggle')}</Button>
-    </div>
-  )
-}
+    return (
+        <div
+            data-testid="sidebar"
+            className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
+        >
+            <Button
+                data-testid="sidebar-toggle"
+                onClick={onToggle}
+            >
+                toggle
+            </Button>
+            <div className={cls.switchers}>
+                <ThemeSwitcher />
+                <LangSwitcher className={cls.lang} />
+            </div>
+        </div>
+    );
+};

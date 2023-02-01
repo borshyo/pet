@@ -1,30 +1,20 @@
-import { type FC } from 'react'
-import { useTranslation } from 'react-i18next'
-import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
-import cls from './Navbar.module.scss'
+import { classNames } from 'shared/lib/classNames/classNames';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import cls from './Navbar.module.scss';
 
 interface NavbarProps {
-  className?: string
+    className?: string;
 }
 
-export const Navbar: FC<NavbarProps> = ({ className }) => {
-  const { t } = useTranslation()
-  return (
-    <div className={classNames(cls.navbar, {}, [className])}>
-      <div className={cls.links}>
-        <AppLink
-          theme={AppLinkTheme.SECONDARY}
-          to={RoutePath[AppRoutes.MAIN]}
-          className={cls.mainLink}
-        >
-          {t('main')}
-        </AppLink>
-        <AppLink theme={AppLinkTheme.RED} to={RoutePath[AppRoutes.ABOUT]}>
-          {t('about')}
-        </AppLink>
-      </div>
+export const Navbar = ({ className }: NavbarProps) => (
+    <div className={classNames(cls.Navbar, {}, [className])}>
+        <div className={cls.links}>
+            <AppLink theme={AppLinkTheme.SECONDARY} to="/" className={cls.mainLink}>
+                Главная
+            </AppLink>
+            <AppLink theme={AppLinkTheme.RED} to="/about">
+                О сайте
+            </AppLink>
+        </div>
     </div>
-  )
-}
+);

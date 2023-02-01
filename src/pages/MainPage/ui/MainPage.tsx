@@ -1,15 +1,14 @@
-import { BugButton } from 'app/providers/ErrorBoundary'
-import { type FC } from 'react'
-import { useTranslation } from 'react-i18next'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-const MainPage: FC = () => {
-  const { t } = useTranslation('mainPage')
-  return (
-    <div>
-      {t('main')}
-      <BugButton />
-    </div>
-  )
-}
+const MainPage = () => {
+    const { t } = useTranslation();
 
-export default MainPage
+    return (
+        <div>
+            {t('Главная страница')}
+        </div>
+    );
+};
+
+export default MainPage;

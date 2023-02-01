@@ -1,10 +1,11 @@
 {
-  "lang": "english",
-  "toggle": "toggle",
-  "main": "Main",
-  "about": "About",
-  "loading": "Loading...",
-  "notfound": "Page not found",
-  "reload page": "reload page",
-  "something went wrong": "something went wrong"
+  "Тестовый пример": "Test example",
+  "Перевод": "Translate",
+  "Главная страница": "Main page",
+  "Язык": "English",
+  "новый перевод": "новый перевод",
+  "Страница не найдена": "Page not found",
+  "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
+  "Обновить страницу": "Обновить страницу",
+  "throw error": "throw error"
 }
