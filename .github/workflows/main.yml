@@ -8,8 +8,8 @@ jobs:
     integration:
         strategy:
             matrix:
-                os: [node-latest]
-                node: [17.x]
+                os: [windows-latest]
+                node: [16.x]
         runs-on: ${{ matrix.os }}
         steps:
             - uses: actions/checkout@v2
