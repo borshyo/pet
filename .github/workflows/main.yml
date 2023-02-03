@@ -8,7 +8,7 @@ jobs:
     integration:
         strategy:
             matrix:
-                os: [windows]
+                os: [windows-latest]
                 node: [16.x]
         runs-on: ${{ matrix.os }}
         steps:
