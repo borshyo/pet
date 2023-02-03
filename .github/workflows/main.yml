@@ -12,8 +12,9 @@ jobs:
                 node: [17.x]
         runs-on: ${{ matrix.os }}
         steps:
+            - uses: actions/checkout@v2
             - name: Setup Node.js environment
-              uses: actions/setup-node@v1.4.3
+              uses: actions/setup-node@v1
               with:
                   node-version: ${{ matrix.node }}
             - name: install modules
