@@ -11,13 +11,14 @@ interface ModalProps {
     children: ReactNode;
     isOpen: boolean;
     onClose?: () => void;
+    portalTarget?: HTMLElement;
 }
 
 const ANIMATION_DELAY = 300;
 
 export const Modal: FC<ModalProps> = (props) => {
     const {
-        className, children, isOpen, onClose,
+        className, children, isOpen, onClose, portalTarget,
     } = props;
 
     const [isClosing, setIsClosing] = useState(false);
@@ -64,7 +65,7 @@ export const Modal: FC<ModalProps> = (props) => {
         [cls[theme]]: true,
     };
     return (
-        <Portal>
+        <Portal element={portalTarget}>
             <div className={classNames(cls.Modal, mods, [className])}>
                 <div onClick={closeHandler} className={cls.overlay}>
                     <div onClick={onContentClick} className={classNames(cls.content)}>
