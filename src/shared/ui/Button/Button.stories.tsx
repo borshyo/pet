@@ -20,6 +20,12 @@ Clear.args = {
     children: 'text',
 };
 
+export const ClearInverted = Template.bind({});
+ClearInverted.args = {
+    theme: ButtonTheme.CLEAR_INVERTED,
+    children: 'text',
+};
+
 export const WithChildren = Template.bind({});
 WithChildren.args = {
     children: 'test',
