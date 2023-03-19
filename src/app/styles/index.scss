@@ -4,9 +4,13 @@
 @import "themes/dark";
 
 body {
+    min-height: 100vh;
+}
+
+.app,
+.app_dark_theme {
     font: var(--font-m);
     color: var(--primary-color);
-    min-height: 100vh;
 }
 
 .app {
